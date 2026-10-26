@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="Nexora Quantum — Explore robotics, AI, electronics and innovative technology projects.">
+  <title>Nexora Quantum | Robotics & AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#home" class="brand">
+      <span class="logo">NQ</span>
+      <span>NEXORA <b>QUANTUM</b></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#shop">Components</a>
+      <a href="#courses">Courses</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#contact" class="nav-button">Join Us ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">✦ BUILD • CODE • INNOVATE</span>
+        <h1>Turning Ideas Into <span>Intelligent Machines.</span></h1>
+        <p>
+          Discover robotics, artificial intelligence and electronics.
+          Learn practical skills, build exciting projects and create the future.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="button primary">Explore Projects ↗</a>
+          <a href="#courses" class="button secondary">Start Learning</a>
+        </div>
+
+        <div class="stats">
+          <div><strong>01</strong><span>Imagine</span></div>
+          <div><strong>02</strong><span>Build</span></div>
+          <div><strong>03</strong><span>Innovate</span></div>
+        </div>
+      </div>
+
+      <div class="robot-card">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="robot-icon">🤖</div>
+        <div class="floating-chip chip-one">AI + ROBOTICS</div>
+        <div class="floating-chip chip-two">SYSTEM ONLINE ●</div>
+        <div class="robot-caption">
+          <span>NX-01 / EXPLORER</span>
+          <small>Designed for tomorrow</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">OUR LABORATORY</span>
+          <h2>Projects That <span>Come Alive.</span></h2>
+        </div>
+        <p>From beginner circuits to intelligent robots, turn your curiosity into creation.</p>
+      </div>
+
+      <div class="filters" id="projectFilters">
+        <button class="filter active" data-filter="all">All Projects</button>
+        <button class="filter" data-filter="robotics">Robotics</button>
+        <button class="filter" data-filter="ai">Artificial Intelligence</button>
+        <button class="filter" data-filter="electronics">Electronics</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card" data-category="robotics">
+          <div class="project-art art-blue">🤖</div>
+          <div class="card-body">
+            <span class="tag">ROBOTICS</span>
+            <h3>Smart Humanoid Robot</h3>
+            <p>Explore voice commands, sensors and interactive robot behaviour.</p>
+            <a href="#contact">Build this project ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="ai">
+          <div class="project-art art-purple">🧠</div>
+          <div class="card-body">
+            <span class="tag">ARTIFICIAL INTELLIGENCE</span>
+            <h3>AI Voice Assistant</h3>
+            <p>Learn the basics of speech recognition and intelligent assistants.</p>
+            <a href="#courses">Learn the basics ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="electronics">
+          <div class="project-art art-green">⚡</div>
+          <div class="card-body">
+            <span class="tag">ELECTRONICS</span>
+            <h3>Smart Home System</h3>
+            <p>Discover sensors, microcontrollers and automated lighting.</p>
+            <a href="#contact">Explore project ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="robotics">
+          <div class="project-art art-orange">🚗</div>
+          <div class="card-body">
+            <span class="tag">ROBOTICS</span>
+            <h3>Obstacle-Avoiding Car</h3>
+            <p>Create a small robot that detects obstacles and changes direction.</p>
+            <a href="#courses">Start learning ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE COMPONENT HUB</span>
+          <h2>Tools For <span>Young Innovators.</span></h2>
+        </div>
+        <p>Explore example components commonly used in robotics and electronics.</p>
+      </div>
+
+      <div class="shop-tools">
+        <input id="shopSearch" type="search" placeholder="Search components..." aria-label="Search components">
+        <select id="shopCategory" aria-label="Filter component category">
+          <option value="all">All categories</option>
+          <option value="boards">Boards</option>
+          <option value="sensors">Sensors</option>
+          <option value="motors">Motors</option>
+        </select>
+        <span class="bag-count">Demo bag: <b id="bagCount">0</b></span>
+      </div>
+
+      <div class="shop-grid" id="shopGrid">
+        <article class="shop-card" data-name="Arduino Uno development board" data-category="boards">
+          <div class="shop-art">🔌</div>
+          <h3>Arduino Uno</h3>
+          <p>Microcontroller board</p>
+          <div class="shop-bottom"><span>Example item</span><button class="add-to-bag">Add +</button></div>
+        </article>
+
+        <article class="shop-card" data-name="Ultrasonic distance sensor" data-category="sensors">
+          <div class="shop-art">📡</div>
+          <h3>Distance Sensor</h3>
+          <p>Detect nearby objects</p>
+          <div class="shop-bottom"><span>Example item</span><button class="add-to-bag">Add +</button></div>
+        </article>
+
+        <article class="shop-card" data-name="DC motor robotics" data-category="motors">
+          <div class="shop-art">⚙️</div>
+          <h3>DC Motor</h3>
+          <p>Power small robot wheels</p>
+          <div class="shop-bottom"><span>Example item</span><button class="add-to-bag">Add +</button></div>
+        </article>
+
+        <article class="shop-card" data-name="ESP32 wireless development board" data-category="boards">
+          <div class="shop-art">💻</div>
+          <h3>ESP32 Board</h3>
+          <p>Wireless projects and IoT</p>
+          <div class="shop-bottom"><span>Example item</span><button class="add-to-bag">Add +</button></div>
+        </article>
+      </div>
+      <p class="note">Demo only: items are not for sale and no order or payment is processed.</p>
+    </section>
+
+    <section class="section learning-section" id="courses">
+      <span class="eyebrow">LEARN BY DOING</span>
+      <h2>Your Next Skill Starts <span>Here.</span></h2>
+      <p class="section-description">
+        Build a foundation in programming, electronics and robotics through hands-on learning.
+      </p>
+
+      <div class="course-grid">
+        <article class="course-card">
+          <span class="course-number">01 / BEGINNER</span>
+          <h3>Robotics Fundamentals</h3>
+          <p>Understand motors, sensors, circuits and basic robot design.</p>
+          <a href="#contact">Ask about classes ↗</a>
+        </article>
+        <article class="course-card">
+          <span class="course-number">02 / PROGRAMMING</span>
+          <h3>Python & AI Basics</h3>
+          <p>Learn variables, logic, algorithms and introductory AI concepts.</p>
+          <a href="#contact">Ask about classes ↗</a>
+        </article>
+        <article class="course-card">
+          <span class="course-number">03 / HANDS-ON</span>
+          <h3>Electronics Lab</h3>
+          <p>Explore safe circuits, microcontrollers and real-world experiments.</p>
+          <a href="#contact">Ask about classes ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section quiz-section" id="quiz">
+      <div class="quiz-box">
+        <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+        <h2>Think Like <span>An Innovator.</span></h2>
+        <p>Try this quick beginner robotics question.</p>
+
+        <div id="quizContent">
+          <h3 id="question">Which component can measure distance to an obstacle?</h3>
+          <div id="answers" class="answers">
+            <button data-answer="0">A. Ultrasonic sensor</button>
+            <button data-answer="1">B. Speaker</button>
+            <button data-answer="2">C. LED</button>
+          </div>
+          <p id="quizFeedback" aria-live="polite"></p>
+          <button id="nextQuestion" class="button primary" hidden>Next Question →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <span class="eyebrow">ABOUT NEXORA QUANTUM</span>
+      <h2>Curiosity Builds <span>The Future.</span></h2>
+      <p>
+        Nexora Quantum is a technology education concept focused on making robotics,
+        artificial intelligence, coding and electronics approachable for learners.
+        Our mission is to encourage practical skills, creative thinking and innovation.
+      </p>
+      <a class="button secondary" href="#contact">Connect With Us ↗</a>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div>
+        <span class="eyebrow">LET'S CREATE SOMETHING</span>
+        <h2>Have An Idea? <span>Let's Talk.</span></h2>
+        <p>Ask about projects, workshops, learning opportunities or collaborations.</p>
+        <a class="social-link" href="https://www.instagram.com/nexoraquantum/" target="_blank" rel="noopener noreferrer">
+          Follow Nexora Quantum on Instagram ↗
+        </a>
+      </div>
+
+      <form id="contactForm">
+        <label for="visitorName">Your name</label>
+        <input id="visitorName" name="name" required placeholder="Enter your name">
+
+        <label for="visitorEmail">Email address</label>
+        <input id="visitorEmail" name="email" type="email" required placeholder="you@example.com">
+
+        <label for="visitorMessage">Your message</label>
+        <textarea id="visitorMessage" name="message" rows="4" required placeholder="Tell us about your idea..."></textarea>
+
+        <button class="button primary" type="submit">Prepare Message ↗</button>
+        <p id="formFeedback" aria-live="polite"></p>
+        <small>This demo opens your email app; it does not send messages by itself.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand"><span class="logo">NQ</span><span>NEXORA <b>QUANTUM</b></span></a>
+    <p>Explore. Experiment. Engineer.</p>
+    <p>© <span id="year"></span> Nexora Quantum. All rights reserved.</p>
+  </footer>
+</body>
+</html>
