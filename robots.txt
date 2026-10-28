@@ -1,0 +1,7 @@
+# Nexora Quantum
+# Robotics • AI • Electronics
+
+User-agent: *
+Allow: /
+
+Sitemap: https://nexoraquantum.github.io/nexoraquantum/sitemap.xml
