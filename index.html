@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+
   <!-- =========================================
        NEXORA QUANTUM
        Robotics • AI • Electronics
-       ========================================= -->
+  ========================================== -->
 
   <meta charset="UTF-8">
 
@@ -27,16 +28,36 @@
 
   <meta
     name="keywords"
-    content="Nexora Quantum, robotics education, beginner AI projects, Arduino Uno guide, ESP32 tutorials, learn electronics, robotics projects, DIY smart home system, artificial intelligence"
+    content="Nexora Quantum, robotics education, beginner AI projects, Arduino Uno guide, learn electronics, DIY smart home system, ESP32 tutorials, robotics projects"
   >
 
   <meta name="author" content="Nexora Quantum">
-
   <meta name="robots" content="index, follow">
 
-  <meta name="theme-color" content="#05070a">
+  <meta name="theme-color" content="#02070d">
 
-  <!-- ================= SOCIAL SEO ================= -->
+  <!-- ================= CANONICAL ================= -->
+
+  <link
+    rel="canonical"
+    href="https://nexoraquantum.github.io/nexoraquantum/"
+  >
+
+  <!-- ================= FAVICON ================= -->
+  <!-- logo.png is directly in the main repository -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="logo.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="logo.png"
+  >
+
+  <!-- ================= OPEN GRAPH ================= -->
 
   <meta
     property="og:title"
@@ -45,21 +66,35 @@
 
   <meta
     property="og:description"
-    content="Ideas → Robots → A Better Tomorrow. Learn robotics, AI, Arduino, ESP32 and electronics through hands-on projects."
+    content="Turning ideas into intelligent machines through robotics, AI, electronics, Arduino and ESP32."
   >
 
-  <meta property="og:type" content="website">
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://nexoraquantum.github.io/nexoraquantum/"
+  >
 
   <meta
     property="og:image"
-    content="assets/logo.png"
+    content="https://nexoraquantum.github.io/nexoraquantum/logo.png"
   >
 
-  <meta property="og:site_name" content="Nexora Quantum">
+  <meta
+    property="og:site_name"
+    content="Nexora Quantum"
+  >
 
-  <!-- Twitter / Social preview -->
+  <!-- ================= TWITTER / X ================= -->
 
-  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
 
   <meta
     name="twitter:title"
@@ -68,31 +103,18 @@
 
   <meta
     name="twitter:description"
-    content="Explore robotics, artificial intelligence and electronics with Nexora Quantum."
+    content="Explore robotics, artificial intelligence, electronics, Arduino and ESP32 with Nexora Quantum."
   >
 
   <meta
     name="twitter:image"
-    content="assets/logo.png"
+    content="https://nexoraquantum.github.io/nexoraquantum/logo.png"
   >
 
-  <!-- ================= FAVICON ================= -->
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/logo.png"
-  >
-
-  <!-- ================= FONTS ================= -->
+  <!-- ================= GOOGLE FONTS ================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap"
@@ -103,7 +125,7 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- ================= JS ================= -->
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script src="script.js" defer></script>
 
@@ -114,15 +136,16 @@
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Nexora Quantum",
-    "description": "Technology education initiative focused on robotics, artificial intelligence, coding, Arduino, ESP32 and electronics.",
+    "url": "https://nexoraquantum.github.io/nexoraquantum/",
+    "logo": "https://nexoraquantum.github.io/nexoraquantum/logo.png",
+    "description": "Technology education concept focused on robotics, artificial intelligence, coding, Arduino, ESP32 and electronics.",
     "knowsAbout": [
       "Robotics",
       "Artificial Intelligence",
       "Electronics",
       "Arduino",
       "ESP32",
-      "Programming",
-      "Microcontrollers"
+      "Coding"
     ],
     "sameAs": [
       "https://www.instagram.com/nexoraquantum/"
@@ -137,240 +160,317 @@
 
   <!-- =========================================
        BACKGROUND EFFECTS
-       ========================================= -->
+  ========================================== -->
 
   <div class="background-effects" aria-hidden="true">
 
     <div class="grid-background"></div>
 
-    <div class="glow glow-one"></div>
-
-    <div class="glow glow-two"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="background-glow glow-three"></div>
 
     <div class="stars"></div>
 
   </div>
 
 
+  <!-- Cursor Glow -->
+
+  <div
+    class="cursor-glow"
+    id="cursorGlow"
+    aria-hidden="true"
+  ></div>
+
+
   <!-- =========================================
        HEADER
-       ========================================= -->
+  ========================================== -->
 
-  <header class="header" id="header">
+  <header class="site-header" id="siteHeader">
 
-    <a
-      href="#home"
-      class="brand"
-      aria-label="Nexora Quantum home"
-    >
+    <div class="nav-container">
 
-      <img
-        src="assets/logo.png"
-        alt="Nexora Quantum logo"
-        class="brand-logo"
-        width="60"
-        height="60"
-      >
-
-      <div class="brand-name">
-
-        <strong>
-          NEXORA
-        </strong>
-
-        <span>
-          QUANTUM
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- Mobile menu button -->
-
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="navMenu"
-    >
-
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </button>
-
-
-    <!-- Navigation -->
-
-    <nav
-      class="navigation"
-      id="navMenu"
-      aria-label="Main navigation"
-    >
-
-      <a href="#home" class="nav-link active">
-        Home
-      </a>
-
-      <a href="#projects" class="nav-link">
-        Projects
-      </a>
-
-      <a href="#components" class="nav-link">
-        Components
-      </a>
-
-      <a href="#learning" class="nav-link">
-        Learning
-      </a>
-
-      <a href="#quiz" class="nav-link">
-        Quiz
-      </a>
-
-      <a href="#about" class="nav-link">
-        About
-      </a>
+      <!-- BRAND -->
 
       <a
-        href="#contact"
-        class="nav-contact"
+        href="#home"
+        class="brand"
+        aria-label="Nexora Quantum Home"
       >
-        Connect
-        <span>↗</span>
+
+        <img
+          src="logo.png"
+          alt="Nexora Quantum logo"
+          class="brand-logo"
+        >
+
+        <div class="brand-text">
+
+          <span class="brand-main">
+            NEXORA
+          </span>
+
+          <span class="brand-sub">
+            QUANTUM
+          </span>
+
+        </div>
+
       </a>
 
-    </nav>
+
+      <!-- MOBILE MENU BUTTON -->
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- NAVIGATION -->
+
+      <nav
+        class="nav-menu"
+        id="navMenu"
+        aria-label="Main navigation"
+      >
+
+        <a href="#home" class="nav-link active">
+          Home
+        </a>
+
+        <a href="#projects" class="nav-link">
+          Projects
+        </a>
+
+        <a href="#components" class="nav-link">
+          Components
+        </a>
+
+        <a href="#learning" class="nav-link">
+          Learning
+        </a>
+
+        <a href="#quiz" class="nav-link">
+          Quiz
+        </a>
+
+        <a href="#about" class="nav-link">
+          About
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-link nav-connect"
+        >
+          Connect ↗
+        </a>
+
+      </nav>
+
+    </div>
 
   </header>
 
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
 
   <main>
 
 
     <!-- =========================================
          HERO
-         ========================================= -->
+    ========================================== -->
 
     <section
-      class="hero"
+      class="hero section"
       id="home"
     >
 
-      <div class="hero-content">
-
-        <div class="hero-badge">
-
-          <span class="status-dot"></span>
-
-          ROBOTICS • AI • ELECTRONICS
-
-        </div>
+      <div class="hero-container">
 
 
-        <h1>
+        <!-- HERO CONTENT -->
 
-          Turning Ideas Into
+        <div class="hero-content">
 
-          <span class="gradient-text">
-            Intelligent Machines
-          </span>
+          <div class="hero-badge">
 
-        </h1>
+            <span class="badge-dot"></span>
 
-
-        <p class="hero-description">
-
-          Explore robotics, artificial intelligence,
-          electronics, Arduino and ESP32 through
-          hands-on projects, practical tutorials
-          and interactive learning.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#projects"
-            class="button button-primary"
-          >
-
-            Explore Projects
-
-            <span>↗</span>
-
-          </a>
-
-
-          <a
-            href="#learning"
-            class="button button-secondary"
-          >
-
-            Start Learning
-
-            <span>→</span>
-
-          </a>
-
-        </div>
-
-
-        <!-- Brand philosophy -->
-
-        <div class="innovation-flow">
-
-          <span>IDEAS</span>
-
-          <i>→</i>
-
-          <span>ROBOTS</span>
-
-          <i>→</i>
-
-          <span>A BETTER TOMORROW</span>
-
-        </div>
-
-
-        <!-- Stats -->
-
-        <div class="hero-stats">
-
-          <div class="stat">
-
-            <strong>01</strong>
-
-            <span>
-              Imagine
-            </span>
+            ROBOTICS
+            <span>•</span>
+            AI
+            <span>•</span>
+            ELECTRONICS
 
           </div>
 
 
-          <div class="stat">
+          <h1>
 
-            <strong>02</strong>
+            Turning Ideas
 
-            <span>
-              Engineer
-            </span>
+            <span>Into</span>
+
+            Intelligent
+
+            <span>Machines</span>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            Explore robotics, artificial intelligence,
+            electronics, Arduino and ESP32 through
+            hands-on projects, practical tutorials and
+            interactive learning.
+
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a
+              href="#projects"
+              class="btn btn-primary"
+            >
+              Explore Projects
+              <span>→</span>
+            </a>
+
+            <a
+              href="#learning"
+              class="btn btn-secondary"
+            >
+              Start Learning
+              <span>→</span>
+            </a>
 
           </div>
 
 
-          <div class="stat">
+          <!-- INNOVATION FLOW -->
 
-            <strong>03</strong>
+          <div class="innovation-flow">
 
-            <span>
-              Innovate
-            </span>
+            <span>IDEAS</span>
+
+            <span class="flow-arrow">→</span>
+
+            <span>ROBOTS</span>
+
+            <span class="flow-arrow">→</span>
+
+            <span>A BETTER TOMORROW</span>
+
+          </div>
+
+
+          <!-- STATS -->
+
+          <div class="hero-stats">
+
+            <div class="stat">
+
+              <strong>01</strong>
+
+              <span>IMAGINE</span>
+
+            </div>
+
+            <div class="stat">
+
+              <strong>02</strong>
+
+              <span>ENGINEER</span>
+
+            </div>
+
+            <div class="stat">
+
+              <strong>03</strong>
+
+              <span>INNOVATE</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div
+          class="hero-visual"
+          aria-label="Nexora Quantum technology visualization"
+        >
+
+          <div class="quantum-system">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+
+            <span class="orbit-dot dot-one"></span>
+            <span class="orbit-dot dot-two"></span>
+            <span class="orbit-dot dot-three"></span>
+
+
+            <!-- MAIN LOGO -->
+
+            <div class="logo-core">
+
+              <div class="logo-glow"></div>
+
+              <img
+                src="logo.png"
+                alt="Nexora Quantum robotics and AI education"
+              >
+
+            </div>
+
+
+            <div class="floating-chip chip-one">
+
+              <span class="chip-dot"></span>
+
+              AI SYSTEM
+
+            </div>
+
+
+            <div class="floating-chip chip-two">
+
+              <span class="chip-dot"></span>
+
+              ROBOTICS
+
+            </div>
+
+
+            <div class="floating-chip chip-three">
+
+              <span class="chip-dot"></span>
+
+              SYSTEM ONLINE
+
+            </div>
 
           </div>
 
@@ -378,921 +478,828 @@
 
       </div>
 
-
-      <!-- =====================================
-           HERO LOGO / QUANTUM VISUAL
-           ===================================== -->
-
-      <div class="hero-visual">
-
-        <div class="quantum-system">
-
-          <div class="orbit orbit-one"></div>
-
-          <div class="orbit orbit-two"></div>
-
-          <div class="orbit orbit-three"></div>
+    </section>
 
 
-          <div class="logo-core">
 
-            <div class="logo-glow"></div>
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
 
-            <img
-              src="assets/logo.png"
-              alt="Nexora Quantum robotics and AI education"
-              width="520"
-              height="520"
-              fetchpriority="high"
+    <section
+      class="projects section"
+      id="projects"
+    >
+
+      <div class="section-container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="section-label">
+              02 // OUR LABORATORY
+            </p>
+
+            <h2>
+              Hands-On
+              <span>Projects</span>
+            </h2>
+
+          </div>
+
+
+          <p class="section-description">
+
+            Build real technology while learning
+            robotics, artificial intelligence,
+            programming and electronics.
+
+          </p>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="project-filters">
+
+          <button
+            class="filter active"
+            data-filter="all"
+          >
+            All Projects
+          </button>
+
+          <button
+            class="filter"
+            data-filter="robotics"
+          >
+            Robotics
+          </button>
+
+          <button
+            class="filter"
+            data-filter="ai"
+          >
+            AI
+          </button>
+
+          <button
+            class="filter"
+            data-filter="electronics"
+          >
+            Electronics
+          </button>
+
+        </div>
+
+
+        <!-- PROJECT GRID -->
+
+        <div class="project-grid">
+
+
+          <!-- PROJECT 01 -->
+
+          <article
+            class="project-card"
+            data-category="robotics"
+          >
+
+            <div class="project-visual robot-visual">
+
+              <span class="project-number">
+                01
+              </span>
+
+              <div class="robot-eye"></div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <span class="project-category">
+                ROBOTICS
+              </span>
+
+              <h3>
+                Smart Humanoid Robot
+              </h3>
+
+              <p>
+
+                Explore sensors, movement,
+                voice commands and interactive
+                robot behavior.
+
+              </p>
+
+
+              <div class="tech-tags">
+
+                <span>Arduino</span>
+                <span>Sensors</span>
+                <span>AI</span>
+
+              </div>
+
+
+              <a
+                href="#learning"
+                class="text-link"
+              >
+                Explore Project ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROJECT 02 -->
+
+          <article
+            class="project-card"
+            data-category="ai"
+          >
+
+            <div class="project-visual ai-visual">
+
+              <span class="project-number">
+                02
+              </span>
+
+              <div class="ai-core">
+                AI
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <span class="project-category">
+                ARTIFICIAL INTELLIGENCE
+              </span>
+
+              <h3>
+                AI Voice Assistant
+              </h3>
+
+              <p>
+
+                Discover speech recognition,
+                intelligent responses and
+                introductory AI concepts.
+
+              </p>
+
+
+              <div class="tech-tags">
+
+                <span>Python</span>
+                <span>Voice</span>
+                <span>AI</span>
+
+              </div>
+
+
+              <a
+                href="#learning"
+                class="text-link"
+              >
+                Learn More ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROJECT 03 -->
+
+          <article
+            class="project-card"
+            data-category="electronics"
+          >
+
+            <div class="project-visual home-visual">
+
+              <span class="project-number">
+                03
+              </span>
+
+              <div class="energy-symbol">
+                ⚡
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <span class="project-category">
+                ELECTRONICS
+              </span>
+
+              <h3>
+                Smart Home System
+              </h3>
+
+              <p>
+
+                Learn how sensors,
+                microcontrollers and automation
+                can create intelligent spaces.
+
+              </p>
+
+
+              <div class="tech-tags">
+
+                <span>ESP32</span>
+                <span>IoT</span>
+                <span>Sensors</span>
+
+              </div>
+
+
+              <a
+                href="#components"
+                class="text-link"
+              >
+                View Components ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- PROJECT 04 -->
+
+          <article
+            class="project-card"
+            data-category="robotics"
+          >
+
+            <div class="project-visual car-visual">
+
+              <span class="project-number">
+                04
+              </span>
+
+              <div class="car-body">
+
+                <span></span>
+                <span></span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <span class="project-category">
+                ROBOTICS
+              </span>
+
+              <h3>
+                Obstacle-Avoiding Car
+              </h3>
+
+              <p>
+
+                Build an autonomous robot
+                capable of detecting obstacles
+                and changing direction.
+
+              </p>
+
+
+              <div class="tech-tags">
+
+                <span>Arduino</span>
+                <span>HC-SR04</span>
+                <span>L298N</span>
+
+              </div>
+
+
+              <a
+                href="#learning"
+                class="text-link"
+              >
+                Start Building ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         COMPONENT HUB
+    ========================================== -->
+
+    <section
+      class="components section"
+      id="components"
+    >
+
+      <div class="section-container">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="section-label">
+              03 // COMPONENT HUB
+            </p>
+
+            <h2>
+              Robotics &
+              <span>Microcontrollers</span>
+            </h2>
+
+          </div>
+
+
+          <p class="section-description">
+
+            Understand the hardware behind
+            intelligent machines.
+
+          </p>
+
+        </div>
+
+
+        <!-- COMPONENT SEARCH -->
+
+        <div class="component-tools">
+
+          <div class="search-box">
+
+            <span>⌕</span>
+
+            <input
+              type="search"
+              id="componentSearch"
+              placeholder="Search Arduino, sensors, motors..."
+              aria-label="Search components"
             >
 
           </div>
 
 
-          <div class="floating-chip chip-ai">
-
-            <span></span>
-
-            AI SYSTEM
-
-          </div>
-
-
-          <div class="floating-chip chip-robotics">
-
-            ROBOTICS
-
-          </div>
-
-
-          <div class="floating-chip chip-status">
-
-            <span></span>
-
-            SYSTEM ONLINE
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         PROJECTS
-         ========================================= -->
-
-    <section
-      class="section projects-section"
-      id="projects"
-    >
-
-      <div class="section-heading">
-
-        <div>
-
-          <span class="section-label">
-
-            01 / OUR LABORATORY
-
-          </span>
-
-          <h2>
-
-            Hands-On
-
-            <span>
-              Projects
-            </span>
-
-          </h2>
-
-        </div>
-
-
-        <p>
-
-          Build real technology while learning
-          robotics, artificial intelligence,
-          programming and electronics.
-
-        </p>
-
-      </div>
-
-
-      <!-- Project filters -->
-
-      <div
-        class="filters"
-        id="projectFilters"
-      >
-
-        <button
-          class="filter active"
-          data-filter="all"
-        >
-          All Projects
-        </button>
-
-
-        <button
-          class="filter"
-          data-filter="robotics"
-        >
-          Robotics
-        </button>
-
-
-        <button
-          class="filter"
-          data-filter="ai"
-        >
-          AI
-        </button>
-
-
-        <button
-          class="filter"
-          data-filter="electronics"
-        >
-          Electronics
-        </button>
-
-      </div>
-
-
-      <div class="project-grid">
-
-
-        <!-- PROJECT 1 -->
-
-        <article
-          class="project-card featured-project"
-          data-category="robotics"
-        >
-
-          <div class="project-number">
-            01
-          </div>
-
-
-          <div class="project-visual">
-
-            <div class="project-icon">
-              ◉
-            </div>
-
-            <div class="project-orbit"></div>
-
-          </div>
-
-
-          <div class="project-content">
-
-            <span class="project-category">
-              ROBOTICS
-            </span>
-
-            <h3>
-              Smart Humanoid Robot
-            </h3>
-
-            <p>
-
-              Explore sensors, movement,
-              voice commands and interactive
-              robot behaviour.
-
-            </p>
-
-            <div class="project-tech">
-
-              <span>Arduino</span>
-              <span>Sensors</span>
-              <span>AI</span>
-
-            </div>
-
-            <a href="#contact">
-
-              Explore Project
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PROJECT 2 -->
-
-        <article
-          class="project-card"
-          data-category="ai"
-        >
-
-          <div class="project-number">
-            02
-          </div>
-
-
-          <div class="project-visual ai-visual">
-
-            <div class="ai-core">
-              AI
-            </div>
-
-          </div>
-
-
-          <div class="project-content">
-
-            <span class="project-category">
-              ARTIFICIAL INTELLIGENCE
-            </span>
-
-            <h3>
-              AI Voice Assistant
-            </h3>
-
-            <p>
-
-              Discover speech recognition,
-              intelligent responses and
-              introductory AI concepts.
-
-            </p>
-
-            <div class="project-tech">
-
-              <span>Python</span>
-              <span>Voice</span>
-              <span>AI</span>
-
-            </div>
-
-            <a href="#learning">
-
-              Learn More
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PROJECT 3 -->
-
-        <article
-          class="project-card"
-          data-category="electronics"
-        >
-
-          <div class="project-number">
-            03
-          </div>
-
-
-          <div class="project-visual">
-
-            <div class="circuit-symbol">
-              ⚡
-            </div>
-
-          </div>
-
-
-          <div class="project-content">
-
-            <span class="project-category">
-              ELECTRONICS
-            </span>
-
-            <h3>
-              Smart Home System
-            </h3>
-
-            <p>
-
-              Learn how sensors,
-              microcontrollers and automation
-              can create intelligent spaces.
-
-            </p>
-
-            <div class="project-tech">
-
-              <span>ESP32</span>
-              <span>IoT</span>
-              <span>Sensors</span>
-
-            </div>
-
-            <a href="#components">
-
-              View Components
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PROJECT 4 -->
-
-        <article
-          class="project-card"
-          data-category="robotics"
-        >
-
-          <div class="project-number">
-            04
-          </div>
-
-
-          <div class="project-visual">
-
-            <div class="car-visual">
-
-              <span class="wheel wheel-left"></span>
-
-              <span class="car-body"></span>
-
-              <span class="wheel wheel-right"></span>
-
-            </div>
-
-          </div>
-
-
-          <div class="project-content">
-
-            <span class="project-category">
-              ROBOTICS
-            </span>
-
-            <h3>
-              Obstacle-Avoiding Car
-            </h3>
-
-            <p>
-
-              Build an autonomous robot
-              capable of detecting obstacles
-              and changing direction.
-
-            </p>
-
-            <div class="project-tech">
-
-              <span>Arduino</span>
-              <span>HC-SR04</span>
-              <span>L298N</span>
-
-            </div>
-
-            <a href="#learning">
-
-              Start Building
-
-              <span>↗</span>
-
-            </a>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         COMPONENT HUB
-         ========================================= -->
-
-    <section
-      class="section components-section"
-      id="components"
-    >
-
-      <div class="section-heading">
-
-        <div>
-
-          <span class="section-label">
-
-            02 / COMPONENT HUB
-
-          </span>
-
-          <h2>
-
-            Robotics &
-
-            <span>
-              Microcontrollers
-            </span>
-
-          </h2>
-
-        </div>
-
-
-        <p>
-
-          Understand the hardware behind
-          intelligent machines.
-
-        </p>
-
-      </div>
-
-
-      <div class="component-tools">
-
-        <div class="search-box">
-
-          <span>⌕</span>
-
-          <input
-            id="componentSearch"
-            type="search"
-            placeholder="Search Arduino, sensors, motors..."
-            aria-label="Search robotics components"
+          <select
+            id="componentCategory"
+            aria-label="Filter component category"
           >
 
+            <option value="all">
+              All Components
+            </option>
+
+            <option value="microcontroller">
+              Microcontrollers
+            </option>
+
+            <option value="sensor">
+              Sensors
+            </option>
+
+            <option value="actuator">
+              Actuators
+            </option>
+
+          </select>
+
         </div>
 
 
-        <select
-          id="componentCategory"
-          aria-label="Filter component category"
-        >
 
-          <option value="all">
-            All Components
-          </option>
+        <!-- COMPONENT GRID -->
 
-          <option value="boards">
-            Microcontroller Boards
-          </option>
+        <div class="component-grid">
 
-          <option value="sensors">
-            Sensors
-          </option>
 
-          <option value="motors">
-            Motors & Actuators
-          </option>
+          <article
+            class="component-card"
+            data-name="arduino uno"
+            data-category="microcontroller"
+          >
 
-        </select>
+            <div class="component-top">
 
-      </div>
+              <span>BOARD // 01</span>
 
+              <span>BEGINNER</span>
 
-      <div
-        class="component-grid"
-        id="componentGrid"
-      >
+            </div>
 
 
-        <!-- Arduino -->
+            <div class="component-icon">
+              UNO
+            </div>
 
-        <article
-          class="component-card"
-          data-name="Arduino Uno microcontroller board"
-          data-category="boards"
-        >
 
-          <div class="component-top">
+            <h3>
+              Arduino Uno
+            </h3>
 
-            <span class="component-id">
-              BOARD / 001
-            </span>
 
-            <span class="component-status">
-              BEGINNER
-            </span>
+            <p>
 
-          </div>
+              A beginner-friendly
+              microcontroller board for
+              learning electronics,
+              sensors and robotics.
 
+            </p>
 
-          <div class="component-icon">
-            UNO
-          </div>
 
+            <div class="component-meta">
 
-          <h3>
-            Arduino Uno
-          </h3>
+              <span>Microcontroller</span>
 
-          <p>
+              <strong>ATmega328P</strong>
 
-            A beginner-friendly microcontroller
-            board for learning electronics,
-            sensors and robotics.
+            </div>
 
-          </p>
+          </article>
 
-          <div class="specifications">
 
-            <span>Microcontroller</span>
 
-            <strong>
-              ATmega328P
-            </strong>
+          <article
+            class="component-card"
+            data-name="esp32 wifi bluetooth"
+            data-category="microcontroller"
+          >
 
-          </div>
+            <div class="component-top">
 
-        </article>
+              <span>BOARD // 02</span>
 
+              <span>IOT</span>
 
-        <!-- ESP32 -->
+            </div>
 
-        <article
-          class="component-card"
-          data-name="ESP32 WiFi Bluetooth microcontroller"
-          data-category="boards"
-        >
 
-          <div class="component-top">
+            <div class="component-icon">
+              ESP
+            </div>
 
-            <span class="component-id">
-              BOARD / 002
-            </span>
 
-            <span class="component-status">
-              IoT
-            </span>
+            <h3>
+              ESP32
+            </h3>
 
-          </div>
 
+            <p>
 
-          <div class="component-icon">
-            ESP
-          </div>
+              A powerful microcontroller
+              with Wi-Fi and Bluetooth
+              for connected IoT projects.
 
+            </p>
 
-          <h3>
-            ESP32
-          </h3>
 
-          <p>
+            <div class="component-meta">
 
-            A powerful microcontroller
-            with Wi-Fi and Bluetooth for
-            connected IoT projects.
+              <span>Connectivity</span>
 
-          </p>
+              <strong>Wi-Fi / Bluetooth</strong>
 
-          <div class="specifications">
+            </div>
 
-            <span>Connectivity</span>
+          </article>
 
-            <strong>
-              Wi-Fi + Bluetooth
-            </strong>
 
-          </div>
 
-        </article>
+          <article
+            class="component-card"
+            data-name="ultrasonic sensor hc-sr04 distance sensor"
+            data-category="sensor"
+          >
 
+            <div class="component-top">
 
-        <!-- Sensor -->
+              <span>SENSOR // 01</span>
 
-        <article
-          class="component-card"
-          data-name="HC-SR04 ultrasonic distance sensor"
-          data-category="sensors"
-        >
+              <span>DISTANCE</span>
 
-          <div class="component-top">
+            </div>
 
-            <span class="component-id">
-              SENSOR / 001
-            </span>
 
-            <span class="component-status">
-              DISTANCE
-            </span>
+            <div class="component-icon">
+              |• •|
+            </div>
 
-          </div>
 
+            <h3>
+              Ultrasonic Sensor
+            </h3>
 
-          <div class="component-icon sensor-icon">
 
-            ( • • )
+            <p>
 
-          </div>
+              Measures distance using
+              ultrasonic sound waves
+              to detect obstacles
+              and objects.
 
+            </p>
 
-          <h3>
-            Ultrasonic Sensor
-          </h3>
 
-          <p>
+            <div class="component-meta">
 
-            Measure distance using
-            ultrasonic sound waves in
-            obstacle-detection projects.
+              <span>Model</span>
 
-          </p>
+              <strong>HC-SR04</strong>
 
-          <div class="specifications">
+            </div>
 
-            <span>Model</span>
+          </article>
 
-            <strong>
-              HC-SR04
-            </strong>
 
-          </div>
 
-        </article>
+          <article
+            class="component-card"
+            data-name="dc motor motor actuator"
+            data-category="actuator"
+          >
 
+            <div class="component-top">
 
-        <!-- Motor -->
+              <span>MOTOR // 01</span>
 
-        <article
-          class="component-card"
-          data-name="DC motor robotics actuator"
-          data-category="motors"
-        >
+              <span>OUTPUT</span>
 
-          <div class="component-top">
+            </div>
 
-            <span class="component-id">
-              MOTOR / 001
-            </span>
 
-            <span class="component-status">
-              MOTION
-            </span>
+            <div class="component-icon">
+              M
+            </div>
 
-          </div>
 
+            <h3>
+              DC Motor
+            </h3>
 
-          <div class="component-icon">
-            M
-          </div>
 
+            <p>
 
-          <h3>
-            DC Motor
-          </h3>
+              Converts electrical energy
+              into movement for robots,
+              wheels and mechanical systems.
 
-          <p>
+            </p>
 
-            Convert electrical energy
-            into movement for wheels,
-            robots and mechanical systems.
 
-          </p>
+            <div class="component-meta">
 
-          <div class="specifications">
+              <span>Category</span>
 
-            <span>Category</span>
+              <strong>Actuator</strong>
 
-            <strong>
-              Actuator
-            </strong>
+            </div>
 
-          </div>
+          </article>
 
-        </article>
+        </div>
 
       </div>
 
     </section>
+
 
 
     <!-- =========================================
          LEARNING
-         ========================================= -->
+    ========================================== -->
 
     <section
-      class="section learning-section"
+      class="learning section"
       id="learning"
     >
 
-      <div class="section-heading">
+      <div class="section-container">
 
-        <div>
 
-          <span class="section-label">
+        <div class="section-heading">
 
-            03 / LEARNING PATHS
+          <div>
 
-          </span>
+            <p class="section-label">
+              04 // LEARNING PATHS
+            </p>
 
-          <h2>
+            <h2>
+              Learn.
+              <span>Build. Innovate.</span>
+            </h2>
 
-            Learn.
+          </div>
 
-            <span>
-              Build. Innovate.
-            </span>
 
-          </h2>
+          <p class="section-description">
+
+            Start with the fundamentals
+            and progress toward intelligent
+            robotics systems.
+
+          </p>
 
         </div>
 
 
-        <p>
 
-          Start with the fundamentals
-          and progress toward intelligent
-          robotics systems.
-
-        </p>
-
-      </div>
+        <div class="learning-grid">
 
 
-      <div class="learning-grid">
+          <article class="learning-card">
+
+            <div class="learning-level">
+              LEVEL 01
+            </div>
+
+            <span class="learning-number">
+              01
+            </span>
+
+            <h3>
+              Electronics Fundamentals
+            </h3>
+
+            <p>
+
+              Understand voltage,
+              current, LEDs, resistors,
+              breadboards and safe
+              beginner circuits.
+
+            </p>
+
+            <div class="progress-line">
+              <span style="width: 35%;"></span>
+            </div>
+
+            <small>
+              BEGINNER
+            </small>
+
+          </article>
 
 
-        <article class="learning-card">
 
-          <span class="learning-level">
-            LEVEL 01
-          </span>
+          <article class="learning-card">
 
-          <div class="learning-number">
-            01
-          </div>
+            <div class="learning-level">
+              LEVEL 02
+            </div>
 
-          <h3>
-            Electronics Fundamentals
-          </h3>
+            <span class="learning-number">
+              02
+            </span>
 
-          <p>
+            <h3>
+              Arduino & Robotics
+            </h3>
 
-            Understand voltage, current,
-            LEDs, resistors, breadboards
-            and safe beginner circuits.
+            <p>
 
-          </p>
+              Program microcontrollers
+              and connect motors,
+              sensors and robotic systems.
 
-          <div class="progress-line">
+            </p>
 
-            <span style="width: 35%"></span>
+            <div class="progress-line">
+              <span style="width: 65%;"></span>
+            </div>
 
-          </div>
+            <small>
+              INTERMEDIATE
+            </small>
 
-          <small>
-            BEGINNER
-          </small>
-
-        </article>
-
-
-        <article class="learning-card">
-
-          <span class="learning-level">
-            LEVEL 02
-          </span>
-
-          <div class="learning-number">
-            02
-          </div>
-
-          <h3>
-            Arduino & Robotics
-          </h3>
-
-          <p>
-
-            Program microcontrollers
-            and connect motors,
-            sensors and robotic systems.
-
-          </p>
-
-          <div class="progress-line">
-
-            <span style="width: 60%"></span>
-
-          </div>
-
-          <small>
-            INTERMEDIATE
-          </small>
-
-        </article>
+          </article>
 
 
-        <article class="learning-card">
 
-          <span class="learning-level">
-            LEVEL 03
-          </span>
+          <article class="learning-card">
 
-          <div class="learning-number">
-            03
-          </div>
+            <div class="learning-level">
+              LEVEL 03
+            </div>
 
-          <h3>
-            Python & AI
-          </h3>
+            <span class="learning-number">
+              03
+            </span>
 
-          <p>
+            <h3>
+              Python & AI
+            </h3>
 
-            Explore programming,
-            algorithms and introductory
-            artificial intelligence.
+            <p>
 
-          </p>
+              Explore programming,
+              algorithms and artificial
+              intelligence fundamentals.
 
-          <div class="progress-line">
+            </p>
 
-            <span style="width: 80%"></span>
+            <div class="progress-line">
+              <span style="width: 85%;"></span>
+            </div>
 
-          </div>
+            <small>
+              ADVANCED
+            </small>
 
-          <small>
-            ADVANCED
-          </small>
+          </article>
 
-        </article>
+        </div>
 
       </div>
 
     </section>
 
 
+
     <!-- =========================================
          QUIZ
-         ========================================= -->
+    ========================================== -->
 
     <section
-      class="section quiz-section"
+      class="quiz-section section"
       id="quiz"
     >
 
-      <div class="quiz-container">
+      <div class="section-container">
 
-        <div class="quiz-decoration">
-
-          <div class="quiz-ring"></div>
-
-          <span>
-            ?
-          </span>
-
-        </div>
+        <div class="quiz-panel">
 
 
-        <div class="quiz-content">
+          <div class="quiz-visual">
 
-          <span class="section-label">
+            <div class="quiz-orbit">
 
-            04 / QUANTUM CHALLENGE
+              <span>?</span>
 
-          </span>
+            </div>
 
-          <h2>
-
-            Think Like An
-
-            <span>
-              Innovator.
-            </span>
-
-          </h2>
-
-          <p>
-
-            Test your robotics and
-            electronics knowledge.
-
-          </p>
+          </div>
 
 
-          <div
-            class="quiz-box"
-            id="quizContent"
-          >
 
-            <span class="question-number">
+          <div class="quiz-content">
+
+            <p class="section-label">
+              05 // QUANTUM CHALLENGE
+            </p>
+
+
+            <h2>
+              Think Like An
+              <span>Innovator.</span>
+            </h2>
+
+
+            <p class="quiz-intro">
+
+              Test your robotics and
+              electronics knowledge.
+
+            </p>
+
+
+            <div class="quiz-status">
 
               QUESTION
-              <b id="questionNumber">01</b>
 
-            </span>
+              <span id="questionNumber">
+                01
+              </span>
+
+            </div>
 
 
             <h3 id="question">
@@ -1306,47 +1313,20 @@
             <div
               class="answers"
               id="answers"
-            >
-
-              <button data-answer="0">
-
-                <span>A</span>
-
-                Ultrasonic Sensor
-
-              </button>
-
-
-              <button data-answer="1">
-
-                <span>B</span>
-
-                Speaker
-
-              </button>
-
-
-              <button data-answer="2">
-
-                <span>C</span>
-
-                LED
-
-              </button>
-
-            </div>
+            ></div>
 
 
             <p
+              class="quiz-feedback"
               id="quizFeedback"
               aria-live="polite"
             ></p>
 
 
             <button
+              class="btn btn-primary quiz-next"
               id="nextQuestion"
-              class="button button-primary"
-              hidden
+              type="button"
             >
 
               Next Question →
@@ -1362,28 +1342,29 @@
     </section>
 
 
+
     <!-- =========================================
          ABOUT
-         ========================================= -->
+    ========================================== -->
 
     <section
-      class="section about-section"
+      class="about section"
       id="about"
     >
 
-      <div class="about-layout">
+      <div class="section-container about-container">
 
 
         <div class="about-visual">
 
           <div class="about-logo-ring">
 
+            <div class="about-orbit"></div>
+
             <img
-              src="assets/logo.png"
-              alt="Nexora Quantum"
+              src="logo.png"
+              alt="Nexora Quantum logo"
               loading="lazy"
-              width="420"
-              height="420"
             >
 
           </div>
@@ -1391,23 +1372,17 @@
         </div>
 
 
+
         <div class="about-content">
 
-          <span class="section-label">
-
-            05 / ABOUT NEXORA
-
-          </span>
+          <p class="section-label">
+            06 // ABOUT NEXORA
+          </p>
 
 
           <h2>
-
             Engineering
-
-            <span>
-              Tomorrow.
-            </span>
-
+            <span>Tomorrow.</span>
           </h2>
 
 
@@ -1415,18 +1390,18 @@
 
             Nexora Quantum is an educational
             technology initiative focused on
-            making robotics, artificial
-            intelligence, coding and electronics
-            exciting and approachable.
+            making robotics, artificial intelligence,
+            coding and electronics exciting
+            and approachable.
 
           </p>
 
 
           <p>
 
-            Our mission is to transform
-            curiosity into practical knowledge
-            through experimentation, engineering
+            Our mission is to transform curiosity
+            into practical knowledge through
+            experimentation, engineering
             and hands-on innovation.
 
           </p>
@@ -1434,20 +1409,17 @@
 
           <blockquote>
 
-            “Ideas → Robots →
-            A Better Tomorrow”
+            “Ideas → Robots → A Better Tomorrow”
 
           </blockquote>
 
 
           <a
             href="#contact"
-            class="button button-secondary"
+            class="btn btn-secondary"
           >
 
-            Connect With Nexora
-
-            <span>↗</span>
+            Connect With Nexora ↗
 
           </a>
 
@@ -1458,207 +1430,197 @@
     </section>
 
 
+
     <!-- =========================================
          CONTACT
-         ========================================= -->
+    ========================================== -->
 
     <section
-      class="section contact-section"
+      class="contact section"
       id="contact"
     >
 
-      <div class="contact-heading">
-
-        <span class="section-label">
-
-          06 / CONNECT
-
-        </span>
+      <div class="section-container contact-container">
 
 
-        <h2>
+        <!-- CONTACT INFORMATION -->
 
-          Have An Idea?
+        <div class="contact-info">
 
-          <span>
-            Let's Build It.
-          </span>
-
-        </h2>
+          <p class="section-label">
+            07 // CONNECT
+          </p>
 
 
-        <p>
-
-          Connect with Nexora Quantum
-          for robotics projects,
-          technology learning and
-          collaboration.
-
-        </p>
+          <h2>
+            Have An Idea?
+            <span>Let's Build It.</span>
+          </h2>
 
 
-        <a
-          href="https://www.instagram.com/nexoraquantum/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="instagram-link"
-        >
+          <p>
 
-          Instagram
+            Connect with Nexora Quantum
+            for robotics projects,
+            technology learning
+            and collaboration.
 
-          <span>
-            @nexoraquantum ↗
-          </span>
-
-        </a>
-
-      </div>
+          </p>
 
 
-      <form
-        class="contact-form"
-        id="contactForm"
-      >
+          <div class="social-links">
 
+            <a
+              href="https://www.instagram.com/nexoraquantum/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
 
-        <div class="form-heading">
+              <span>Instagram</span>
 
-          <span>
-            SEND MESSAGE
-          </span>
+              <strong>
+                @nexoraquantum ↗
+              </strong>
 
-          <i></i>
+            </a>
+
+          </div>
 
         </div>
 
 
-        <label for="visitorName">
 
-          Your Name
+        <!-- CONTACT FORM -->
 
-        </label>
-
-        <input
-          id="visitorName"
-          name="name"
-          type="text"
-          autocomplete="name"
-          placeholder="Enter your name"
-          required
+        <form
+          class="contact-form"
+          id="contactForm"
         >
 
-
-        <label for="visitorEmail">
-
-          Email Address
-
-        </label>
-
-        <input
-          id="visitorEmail"
-          name="email"
-          type="email"
-          autocomplete="email"
-          placeholder="you@example.com"
-          required
-        >
+          <p class="form-label">
+            SEND MESSAGE
+          </p>
 
 
-        <label for="visitorMessage">
+          <label for="visitorName">
+            Your Name
+          </label>
 
-          Your Message
-
-        </label>
-
-        <textarea
-          id="visitorMessage"
-          name="message"
-          rows="5"
-          placeholder="Tell us about your idea..."
-          required
-        ></textarea>
-
-
-        <button
-          type="submit"
-          class="button button-primary submit-button"
-        >
-
-          Prepare Message
-
-          <span>↗</span>
-
-        </button>
+          <input
+            type="text"
+            id="visitorName"
+            name="name"
+            placeholder="Enter your name"
+            autocomplete="name"
+            required
+          >
 
 
-        <p
-          id="formFeedback"
-          aria-live="polite"
-        ></p>
+          <label for="visitorEmail">
+            Email Address
+          </label>
 
-      </form>
+          <input
+            type="email"
+            id="visitorEmail"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+
+
+          <label for="visitorMessage">
+            Your Message
+          </label>
+
+          <textarea
+            id="visitorMessage"
+            name="message"
+            rows="6"
+            placeholder="Tell us about your idea..."
+            required
+          ></textarea>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary form-button"
+          >
+
+            Prepare Message ↗
+
+          </button>
+
+
+          <p
+            class="form-feedback"
+            id="formFeedback"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+      </div>
 
     </section>
+
 
   </main>
 
 
+
   <!-- =========================================
        FOOTER
-       ========================================= -->
+  ========================================== -->
 
   <footer class="footer">
 
-    <div class="footer-brand">
-
-      <img
-        src="assets/logo.png"
-        alt="Nexora Quantum logo"
-        loading="lazy"
-        width="90"
-        height="90"
-      >
+    <div class="footer-container">
 
 
-      <div>
+      <div class="footer-brand">
 
-        <strong>
-          NEXORA
-        </strong>
+        <img
+          src="logo.png"
+          alt="Nexora Quantum logo"
+          loading="lazy"
+        >
 
-        <span>
-          QUANTUM
-        </span>
+
+        <div>
+
+          <strong>
+            NEXORA
+          </strong>
+
+          <span>
+            QUANTUM
+          </span>
+
+        </div>
 
       </div>
 
-    </div>
 
 
-    <div class="footer-message">
+      <div class="footer-message">
 
-      <span>
         IDEAS
-      </span>
 
-      <i>→</i>
+        <span>→</span>
 
-      <span>
         ROBOTS
-      </span>
 
-      <i>→</i>
+        <span>→</span>
 
-      <span>
         A BETTER TOMORROW
-      </span>
 
-    </div>
+      </div>
 
 
-    <div class="footer-bottom">
 
-      <p>
+      <p class="copyright">
 
         © <span id="year"></span>
         Nexora Quantum.
@@ -1667,7 +1629,11 @@
       </p>
 
 
-      <a href="#home">
+      <a
+        href="#home"
+        class="back-top"
+        aria-label="Back to top"
+      >
 
         Back to top ↑
 
@@ -1676,17 +1642,6 @@
     </div>
 
   </footer>
-
-
-  <!-- =========================================
-       CURSOR GLOW
-       ========================================= -->
-
-  <div
-    class="cursor-glow"
-    id="cursorGlow"
-    aria-hidden="true"
-  ></div>
 
 </body>
 
